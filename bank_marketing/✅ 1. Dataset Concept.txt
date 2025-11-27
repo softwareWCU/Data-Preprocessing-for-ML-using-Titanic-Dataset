@@ -1,0 +1,93 @@
+✅ 1. Dataset Concept
+
+Name: Bank Marketing Dataset (from Kaggle, based on UCI repository)
+Domain: Marketing analytics for banking
+Goal: Predict whether a client will subscribe to a term deposit after a marketing campaign
+Target Variable: y (or deposit) → values: yes / no
+Size: ~45,000 rows, 17 features
+Feature Types:
+
+Numerical: age, balance, campaign, pdays, previous
+Categorical: job, marital, education, default, housing, loan, contact, month, poutcome
+
+
+Challenge: Class imbalance (majority = “no”)
+
+
+✅ 2. Why This Dataset?
+
+Real-world business problem
+Mix of categorical and numeric features → good for preprocessing
+Binary classification → perfect for Decision Tree criteria comparison
+Allows interpretability (important for marketing decisions)
+
+
+✅ 3. Techniques Applied
+A. Exploratory Data Analysis (EDA)
+
+Checked shape, info, missing values
+Target distribution → imbalance detected
+Visualized:
+
+Histograms for numeric features
+Bar charts for categorical features
+
+
+Observed correlations and patterns (e.g., job type vs subscription)
+
+
+B. Preprocessing
+
+Dropped duration (to avoid target leakage)
+Encoded categorical variables using One-Hot Encoding
+Stratified train-test split (70/30) to preserve class ratio
+Created feature names for interpretation
+
+
+C. Modeling
+
+Built Decision Tree Classifiers with:
+
+Gini Index (default)
+Entropy (Information Gain)
+Log-Loss (classification error measure)
+
+
+Evaluated each model using:
+
+Accuracy
+ROC-AUC
+Precision-Recall AUC
+Confusion Matrix
+
+
+Compared performance across criteria
+
+
+D. Interpretation
+
+Feature Importance ranking → which features influence subscription most
+Decision Tree Sketch (depth=4) → easy-to-understand rules
+Visualizations:
+
+Confusion matrices
+ROC curves
+Precision-Recall curves
+Feature importance bar chart
+
+
+
+
+✅ 4. Key Insights
+
+Features like contact type, month, and previous campaign outcome strongly affect predictions
+Entropy and Gini performed similarly; Log-Loss slightly better in ROC-AUC
+Imbalance impacts accuracy → ROC-AUC and PR-AUC are better metrics
+
+
+✅ 5. Why It Shows Our Capacity
+
+Demonstrates data cleaning, encoding, and modeling
+Compares different decision tree criteria
+Includes interpretability and visualization
+Applies best practices (avoid leakage, stratified split)
